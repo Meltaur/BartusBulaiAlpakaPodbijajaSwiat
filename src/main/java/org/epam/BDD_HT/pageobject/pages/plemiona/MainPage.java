@@ -6,6 +6,10 @@ import org.epam.BDD_HT.pageobject.pages.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static org.epam.BDD_HT.properties.generator.timeGenerator.sleep;
 
 public class MainPage extends BasePage {
 
@@ -18,6 +22,9 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//a[contains(@class, \"btn-login\")]")
     private WebElement loginButton;
 
+    @FindBy(className = "world_button_active")
+    private WebElement worldButton;
+
     public MainPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -27,9 +34,17 @@ public class MainPage extends BasePage {
         return this;
     }
 
-    public void login(String username, String password){
+    public TribePage login(String username, String password) throws InterruptedException {
         userInput.sendKeys(username);
+        sleep();
         passwordInput.sendKeys(password);
+        sleep();
         loginButton.click();
+        waitForVisibility(worldButton);
+        sleep();
+        worldButton.click();
+        return new TribePage(webDriver);
     }
+
+
 }
