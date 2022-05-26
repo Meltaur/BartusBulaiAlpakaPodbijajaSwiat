@@ -17,26 +17,25 @@ import static io.github.bonigarcia.wdm.WebDriverManager.chromedriver;
 
 
 public class Main {
-    public static JSONObject JsonVillage(int[] jednostki, String nazwaWioski)
+    public static JSONObject JsonVillage(int[] jednostki, String nazwaGracza)
     {
         JSONObject wioska = new JSONObject();
-        wioska.put("nazwa",  nazwaWioski);
+        wioska.put("nazwa",  nazwaGracza);
         wioska.put("pik",   jednostki[0]);
-        wioska.put("pik",   jednostki[1]);
-        wioska.put("miecz", jednostki[2]);
-        wioska.put("top",   jednostki[3]);
-        wioska.put("luk",   jednostki[4]);
-        wioska.put("zwiad", jednostki[5]);
-        wioska.put("lk",    jednostki[6]);
-        wioska.put("lkk",   jednostki[7]);
-        wioska.put("ck",    jednostki[8]);
-        wioska.put("taran", jednostki[9]);
-        wioska.put("kat",   jednostki[10]);
-        wioska.put("ryc",   jednostki[11]);
-        wioska.put("szlach",jednostki[12]);
-        wioska.put("chlop", jednostki[13]);
-        wioska.put("kom",   jednostki[14]);
-        wioska.put("ataki", jednostki[15]);
+        wioska.put("miecz", jednostki[1]);
+        wioska.put("top",   jednostki[2]);
+        wioska.put("luk",   jednostki[3]);
+        wioska.put("zwiad", jednostki[4]);
+        wioska.put("lk",    jednostki[5]);
+        wioska.put("lkk",   jednostki[6]);
+        wioska.put("ck",    jednostki[7]);
+        wioska.put("taran", jednostki[8]);
+        wioska.put("kat",   jednostki[9]);
+        wioska.put("ryc",   jednostki[10]);
+        wioska.put("szlach",jednostki[11]);
+        wioska.put("chlop", jednostki[12]);
+        wioska.put("kom",   jednostki[13]);
+        wioska.put("ataki", jednostki[14]);
 
         return wioska;
     }
@@ -51,8 +50,8 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         int[] jednostki = {0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16};
-        JSONObject wioska1 = JsonVillage(jednostki, "wioska1");
-
+        JSONObject wioska;
+        JSONArray array = new JSONArray();
         WebDriver driver = profileSetUp();
         MainPage mainPage = new MainPage(driver);
         mainPage.open();
@@ -60,19 +59,21 @@ public class Main {
         MembersPage membersPage = tribePage.openMembersTab();
         membersPage.goToArmyTab();
         data = membersPage.getData();
-        for(Member member : data){
+        for(Member member : data) {
             System.out.println(member.getName());
             System.out.println(Arrays.toString(member.getArmyArray()));
+
+            wioska = JsonVillage(member.getArmyArray(), member.getName());
+            array.add(wioska);
+        }
+        try {
+            FileWriter file = new FileWriter("JsonFile.json");
+            file.write(array.toJSONString());
+            file.flush();
+        } catch (IOException e) {
+            System.out.println(e);
         }
         driver.quit();
         driver.close();
-        try {
-            FileWriter file = new FileWriter("JsonFile.json");
-            file.write(wioska1.toJSONString());
-            file.flush();
-        }
-        catch (IOException e) {
-            System.out.println(e);
-        }
     }
 }
