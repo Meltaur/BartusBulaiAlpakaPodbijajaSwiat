@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.plemionagui.HelloController">
+   <bottom>
+      <Button fx:id="loadButton" mnemonicParsing="false" onAction="#onButton" text="Wczytaj JSON" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </BorderPane.margin></Button>
+   </bottom>
+   <top>
+      <TextField fx:id="textField" alignment="CENTER" editable="false" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets left="32.5" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets left="40.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../../../Imgs/Pika.PNG" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imgs/Miecz.PNG" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="40.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imgs/Top.PNG" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="40.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets left="40.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../../../Imgs/Łuk.PNG" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets left="40.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../../../Imgs/Zwiad.PNG" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imgs/LK.PNG" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="40.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets left="40.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../../../Imgs/ŁK.PNG" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets left="40.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../../../Imgs/CK.PNG" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imgs/Taran.PNG" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="40.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets left="40.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../../../Imgs/Kapa.PNG" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imgs/Rycek.PNG" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="40.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imgs/Gruby.PNG" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="40.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets left="40.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../../../Imgs/Chłop.PNG" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Imgs/Komy.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="40.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets left="40.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../../../Imgs/Ataki.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <TableView fx:id="tableView" editable="true" maxWidth="250.0" minWidth="499.0" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="nazwa" prefWidth="249.0" text="Nazwa" />
+                <TableColumn fx:id="liczba" prefWidth="249.0" text="Liczba" />
+              </columns>
+            </TableView>
+         </children>
+      </HBox>
+   </center>
+   <stylesheets>
+      <URL value="@demo.css" />
+   </stylesheets>
+</BorderPane>

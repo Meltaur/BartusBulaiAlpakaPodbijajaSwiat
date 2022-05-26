@@ -1,0 +1,25 @@
+.root {
+    -fx-font-family: sans-serif;
+    -fx-background-color: #F5F5DD;
+    -fx-font-family: Verdana;
+}
+
+.text-field {
+    -fx-background-color: #F5F5DC;
+
+}
+
+.table-view {
+    -fx-background-color: #F5F5DC;
+}
+
+.table-view .column-header {
+    -fx-background-color: #DEB887;
+    -fx-font-color: #FAEBD7;
+}
+
+.table-column {
+    -fx-background-color: #FFEBCD;
+    -fx-table-cell-border-color: #DEB887;
+    -fx-border-color: #D2B48C
+}
