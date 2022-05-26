@@ -6,12 +6,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.*;
 
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class HelloController<img1> implements Initializable{
 
+    int[] jednostka;
     @FXML
     public TableView tableView;
 
@@ -57,15 +65,32 @@ public class HelloController<img1> implements Initializable{
         return list;
     }
 
-    public void onButton(){
+    public void onButton() throws IOException {
         textField.setText("User: NaczelnySabotazysta");
 
         nazwa.setCellValueFactory(new PropertyValueFactory<>("nazwa"));
         liczba.setCellValueFactory(new PropertyValueFactory<>("liczba"));
 
+
+        JSONParser jsonParser = new JSONParser();
+
+        try (FileReader reader = new FileReader("JsonFile.json")) {
+            //Read JSON file\
+            Object obj = jsonParser.parse(reader);
+            JSONArray wioski = (JSONArray) obj;
+            System.out.println(wioski.get(0).toString());
+            System.out.println(wioski.get(1).toString());
+            System.out.println(wioski.get(2).toString());
+            //JSONArray employeeList = (JSONArray) obj;
+            //System.out.println(employeeList);
+
+            //Iterate over employee array
+            //employeeList.forEach( emp -> parseEmployeeObject( (JSONObject) emp ) );
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         tableView.setItems(list);
-
-
     }
+
 }
 
